@@ -34,6 +34,15 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        @auth
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('scraping') }}">Hacer scraping</a>
+                            </li>
+
+                        @endauth
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

@@ -25,8 +25,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/post', 'PostController')->names('post');
 
-    Route::get('post/scraping', 'ScrapingController@scraping')->names('scraping');
-
+    Route::get('posts/scraping', 'ScrapingController@scraping')->name('scraping');
 
 });
 
