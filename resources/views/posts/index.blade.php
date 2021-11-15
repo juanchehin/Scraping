@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <table class="table">
+    <table class="table" id="table_id">
         <thead>
             <tr>
                 <th>title</th>
@@ -32,3 +32,11 @@
     </table>
 </div>
 @endsection
+
+@push('javascripts')
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        } );
+    </script>
+@endpush
