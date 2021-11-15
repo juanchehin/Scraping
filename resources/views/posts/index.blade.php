@@ -19,7 +19,16 @@
                     <td scope="row">{{$item->title}}</td>
                     <td>{{$item->location}}</td>
                     <td>{{$item->description}}</td>
-                    <td>{{$item->url}}</td>
+                    <td>
+                        <a href="{{$item->url}}" target="_blank">Ver oferta en la pagina</a>
+                    </td>
+                    <td>
+                        @if($item->is_published == false)
+                            <span class="badge bg-danger">No publicado</span>
+                        @else
+                            <span class="badge bg-success">Publicado</span>
+                        @endif
+                    </td>
                     <td>{{$item->is_published}}</td>
                     <td>
                         <button type="button" class="btn btn-info">Publicar</button>
