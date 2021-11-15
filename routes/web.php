@@ -21,4 +21,10 @@ Auth::routes([
     'register' => false
 ]);
 
+Route::middleware(['auth'])->group(function () {
+
+    Route::resource('/post', 'PostController')->names('post');
+
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
