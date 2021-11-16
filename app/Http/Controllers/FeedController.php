@@ -12,7 +12,7 @@ class FeedController extends Controller
     public function rssFeed(){
 
         $feed = App::make("feed");
-        // creating rss feed with our most recent 20 posts
+
         $posts = Post::where('is_published',true)->orderBy('updated_at', 'desc')->get();
 
         // set your feed's title, description, link, pubdate and language
@@ -21,6 +21,7 @@ class FeedController extends Controller
         $feed->logo = 'http://yoursite.tld/logo.jpg';
         $feed->link = url('feed');
         $feed->setDateFormat('datetime'); // 'datetime', 'timestamp' or 'carbon'
+        \Log::debug('catego atribu : '.print_r($posts,true));
         $feed->pubdate = $posts[0]->created_at;
         $feed->lang = 'es';
         $feed->setShortening(true); // true or false

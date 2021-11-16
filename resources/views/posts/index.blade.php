@@ -33,7 +33,7 @@
                     </td>
                     <td>{{$item->is_published}}</td>
                     <td>
-                        {{--  <a href="{{route('publish', $item)}}" class="btn btn-info">Publicar</a>  --}}
+                        <a href="{{route('publish', $item)}}" class="btn btn-info">Publicar</a>
                         <button type="button" class="btn btn-primary">Editar</button>
                         <button type="button" class="btn btn-danger">Eliminar</button>
                     </td>
