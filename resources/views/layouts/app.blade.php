@@ -41,6 +41,10 @@
                                 <a class="nav-link" href="{{ route('scraping') }}">Hacer scraping</a>
                             </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('rss.feed') }}">Ver RSS</a>
+                            </li>
+
                         @endauth
 
                         <!-- Authentication Links -->

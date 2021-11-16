@@ -18,6 +18,14 @@ class PostController extends Controller
         return view('posts.index',compact('posts'));
     }
 
+    public function publish(Post $post)
+    {
+        $post->update([
+            'is_published' => true
+        ]);
+        return back();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

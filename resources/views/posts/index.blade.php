@@ -8,6 +8,7 @@
                 <th>title</th>
                 <th>location</th>
                 <th>description</th>
+                <th>updated_at</th>
                 <th>url</th>
                 <th>is_published</th>
                 <th>Actions</th>
@@ -19,6 +20,7 @@
                     <td scope="row">{{$item->title}}</td>
                     <td>{{$item->location}}</td>
                     <td>{{$item->description}}</td>
+                    <td>{{$item->updated_at}}</td>
                     <td>
                         <a href="{{$item->url}}" target="_blank">Ver oferta en la pagina</a>
                     </td>
@@ -31,7 +33,7 @@
                     </td>
                     <td>{{$item->is_published}}</td>
                     <td>
-                        <button type="button" class="btn btn-info">Publicar</button>
+                        {{--  <a href="{{route('publish', $item)}}" class="btn btn-info">Publicar</a>  --}}
                         <button type="button" class="btn btn-primary">Editar</button>
                         <button type="button" class="btn btn-danger">Eliminar</button>
                     </td>
@@ -45,7 +47,9 @@
 @push('javascripts')
     <script>
         $(document).ready( function () {
-            $('#table_id').DataTable();
+            $('#table_id').DataTable({
+                "order": [[ 3 , 'desc']]
+            });
         } );
     </script>
 @endpush

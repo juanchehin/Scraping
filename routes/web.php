@@ -27,6 +27,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('posts/scraping', 'ScrapingController@scraping')->name('scraping');
 
+    Route::resource('/publish/{post}', 'PostController@publish')->names('publish');
+
+
 });
+
+Route::get('/rssFeed', 'FeedController@rssFeed')->names('rss.Feed');
 
 Route::get('/home', 'HomeController@index')->name('home');
