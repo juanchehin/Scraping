@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    \Log::debug('Pasa get: ');
     return view('welcome');
 });
 
